@@ -10,3 +10,8 @@ To install:
 * after installation, run `ionic serve` and this should run the server locally
 
 or install the apk from releases
+
+# Screenshots
+![](001.png) ![](002.png)
+![](003.png) ![](004.png)
+![](005.png) ![](006.png)
