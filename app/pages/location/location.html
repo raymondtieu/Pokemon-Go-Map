@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar primary>
+    <ion-title>Location</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <form [ngFormModel]="authForm" (ngSubmit)="onSubmit(authForm.value)">
+    <ion-list>
+
+      <ion-list-header>
+        <h4>Enter Location</h4>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-label floating>Address</ion-label>
+        <ion-input type="text" ngControl="address"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>City</ion-label>
+        <ion-input type="text" ngControl="city"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Province</ion-label>
+        <ion-input type="text" ngControl="province"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Country</ion-label>
+        <ion-input type="text" ngControl="country"></ion-input>
+      </ion-item>
+    </ion-list>
+    
+    <div padding>
+      <button full large primary type="submit" [disabled]="!authForm.valid">Search</button>
+    </div>
+  </form>
+</ion-content>

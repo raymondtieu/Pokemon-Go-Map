@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-navbar primary>
+    <ion-title>Settings</ion-title>
+    
+    <ion-buttons end>
+      <button (click)="signOut()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-list-header>
+      <b>Footsteps:</b>
+      <ion-badge secondary item-right>{{steps}}</ion-badge>
+    </ion-list-header>
+    <ion-item>
+      <ion-range secondary min="1" max="10" [(ngModel)]="steps" primary debouce="200"></ion-range>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      <b>Time Between Scans:</b>
+      <ion-badge secondary item-right>{{scanDelay}}</ion-badge>
+    </ion-list-header>
+    <ion-item>
+      <ion-range secondary min="1" max="10" [(ngModel)]="scanDelay" primary debouce="200"></ion-range>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      <b>Show:</b>
+    </ion-list-header>
+  
+    <ion-item>
+      <ion-label>Pokemon</ion-label>
+      <ion-toggle secondary disabled [(ngModel)]="pokemon"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Pokestops</ion-label>
+      <ion-toggle secondary disabled [(ngModel)]="pokestops"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Gyms</ion-label>
+      <ion-toggle secondary disabled [(ngModel)]="gyms"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      <b>Hide:</b>
+    </ion-list-header>
+  
+    <ion-item>
+      <ion-label>Common Pokemon</ion-label>
+      <ion-toggle secondary [(ngModel)]="common"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Rare Pokemon</ion-label>
+      <ion-toggle secondary [(ngModel)]="rare"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Legendary Pokemon</ion-label>
+      <ion-toggle secondary [(ngModel)]="legendary"></ion-toggle>
+    </ion-item>
+  </ion-list>
+  
+  <div padding>
+    <p>
+      <button full large primary (click)="useCurrentLocation()">Use Current Location</button>
+    </p>
+
+    <p>
+      <button full large secondary (click)="enterLocation()">Enter a Location</button>
+    </p>
+  </div>
+
+  
+</ion-content>

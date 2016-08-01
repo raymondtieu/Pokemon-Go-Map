@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar primary>
+    <ion-title>Map</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="google-maps">
+  <div class="map-wrapper">
+    <div id="map"></div> 
+
+    <!-- Enable and disable search button -->
+    <button primary full (click)="startSearch()" *ngIf="!searching && !waitingForResponse">
+      Start Searching
+      <ion-icon name="bicycle"></ion-icon>
+    </button>
+    <button primary full (click)="startSearch()" disabled *ngIf="!searching && waitingForResponse">
+      Starting Search
+      <ion-icon name="bicycle"></ion-icon>
+    </button>
+
+    <!-- Enable and disable stop button -->
+    <button danger full (click)="stopSearch()" *ngIf="searching && !(waitingForResponse || waitingToStop)">
+      Stop Searching 
+      <ion-icon name="man"></ion-icon>
+      <span class="uptime">({{uptime}}s)</span>
+    </button>
+    <button danger full (click)="stopSearch()" disabled *ngIf="searching && (waitingForResponse || waitingToStop)">
+      Stopping Search 
+      <ion-icon name="man"></ion-icon>
+      <span class="uptime">({{uptime}}s)</span>
+    </button>
+  </div>
+</ion-content>
