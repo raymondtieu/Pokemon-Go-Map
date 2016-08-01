@@ -5,11 +5,9 @@ import {ConnectivityService} from '../../providers/connectivity-service/connecti
 import {PokemonService} from '../../providers/pokemon-service/pokemon-service';
 import {StorageService} from '../../providers/storage-service/storage-service';
 import {MarkerService} from '../../providers/marker-service/marker-service';
-import {Timer} from '../../components/timer/timer';
 
 @Component({
-	templateUrl: 'build/pages/map/map.html',
-	directives: [Timer]
+	templateUrl: 'build/pages/map/map.html'
 })
 
 export class MapPage {
