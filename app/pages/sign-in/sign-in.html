@@ -1,43 +1,43 @@
 <ion-header>
-  <ion-navbar primary>
-    <ion-title>Sign In</ion-title>
+	<ion-navbar primary>
+		<ion-title>Sign In</ion-title>
 
-    <ion-buttons end>
-      <button (click)="showInfo()">
-        <ion-icon name="information-circle"></ion-icon>
-      </button>
-    </ion-buttons>
-  </ion-navbar>
+		<ion-buttons end>
+			<button (click)="showInfo()">
+				<ion-icon name="information-circle"></ion-icon>
+			</button>
+		</ion-buttons>
+	</ion-navbar>
 </ion-header>
 
 <ion-content class="sign-in">
-  <form [ngFormModel]="authForm" (ngSubmit)="onSubmit(authForm.value)">
-    <ion-list>
-      <ion-list-header>
-        <h4>Sign in with PTC Account</h4>
-      </ion-list-header>
+	<form [ngFormModel]="authForm" (ngSubmit)="onSubmit(authForm.value)">
+		<ion-list>
+			<ion-list-header>
+				<h4>Sign in with PTC Account</h4>
+			</ion-list-header>
 
-      <ion-item>
-        <ion-label floating>Username</ion-label>
-        <ion-input type="text" ngControl="username"></ion-input>
-      </ion-item>
+			<ion-item>
+				<ion-label floating>Username</ion-label>
+				<ion-input type="text" ngControl="username"></ion-input>
+			</ion-item>
 
-      <ion-item>
-        <ion-label floating>Password</ion-label>
-        <ion-input type="password" ngControl="password"></ion-input>
-      </ion-item>
-    </ion-list>
+			<ion-item>
+				<ion-label floating>Password</ion-label>
+				<ion-input type="password" ngControl="password"></ion-input>
+			</ion-item>
+		</ion-list>
 
-    <ion-item>
-      <ion-label>Remember Me</ion-label>
-      <ion-checkbox secondary [(ngModel)]="remember"></ion-checkbox>
-    </ion-item>
+		<ion-item>
+			<ion-label>Remember Me</ion-label>
+			<ion-checkbox secondary [(ngModel)]="remember"></ion-checkbox>
+		</ion-item>
 
-    <div padding>
-      <button full large primary type="submit" [disabled]="!authForm.valid">Sign In</button>
-    </div>
-  </form>
+		<div padding>
+			<button full large primary type="submit" [disabled]="!authForm.valid">Sign In</button>
+		</div>
+	</form>
 
 
-  <p class="failed"><em *ngIf="failed_login">Login unsuccessful. Username or password are incorrect, or servers are down.</em></p>
+	<p class="failed"><em *ngIf="failed_login">Login unsuccessful. Username or password are incorrect, or servers are down.</em></p>
 </ion-content>

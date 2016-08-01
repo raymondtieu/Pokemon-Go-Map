@@ -4,42 +4,42 @@ import {Platform} from 'ionic-angular';
 import 'rxjs/add/operator/map';
 
 /*
-  Generated class for the ConnectivityService provider.
+	Generated class for the ConnectivityService provider.
 
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular 2 DI.
+	See https://angular.io/docs/ts/latest/guide/dependency-injection.html
+	for more info on providers and Angular 2 DI.
 */
 @Injectable()
 export class ConnectivityService {
-  onDevice: boolean;
+	onDevice: boolean;
  
-  constructor(private platform: Platform) {
-    this.onDevice = this.platform.is('ios') || this.platform.is('android');
-  }
+	constructor(private platform: Platform) {
+		this.onDevice = this.platform.is('ios') || this.platform.is('android');
+	}
  
-  isOnline() {
-    
-    if(this.onDevice && navigator.connection){
+	isOnline() {
+		
+		if(this.onDevice && navigator.connection){
  
-      let networkState = navigator.connection.type;
+			let networkState = navigator.connection.type;
  
-      return networkState !== Connection.NONE;
+			return networkState !== Connection.NONE;
  
-    } else {
-      return navigator.onLine;      
-    }
-  }
+		} else {
+			return navigator.onLine;      
+		}
+	}
  
-  isOffline() {
-    if(this.onDevice && navigator.connection){
+	isOffline() {
+		if(this.onDevice && navigator.connection){
  
-      let networkState = navigator.connection.type;
+			let networkState = navigator.connection.type;
  
-      return networkState === Connection.NONE;
+			return networkState === Connection.NONE;
  
-    } else {
-      return !navigator.onLine;     
-    }
-  }
+		} else {
+			return !navigator.onLine;     
+		}
+	}
 }
 

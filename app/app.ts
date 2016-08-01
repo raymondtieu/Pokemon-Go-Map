@@ -13,32 +13,32 @@ import {PokemonService} from './providers/pokemon-service/pokemon-service';
 import {MarkerService} from './providers/marker-service/marker-service';
 
 @Component({
-  templateUrl: 'build/app.html'
+	templateUrl: 'build/app.html'
 })
 class MyApp {
-  @ViewChild(Nav) nav: Nav;
+	@ViewChild(Nav) nav: Nav;
 
-  rootPage: any = SignInPage;
+	rootPage: any = SignInPage;
 
-  constructor(
-    private platform: Platform
-  ) {
-    this.initializeApp();
-  }
+	constructor(
+		private platform: Platform
+	) {
+		this.initializeApp();
+	}
 
-  initializeApp() {
-    this.platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      StatusBar.overlaysWebView(false);
+	initializeApp() {
+		this.platform.ready().then(() => {
+			// Okay, so the platform is ready and our plugins are available.
+			// Here you can do any higher level native things you might need.
+			StatusBar.overlaysWebView(false);
 
-      if (this.platform.is('android')) {
-        StatusBar.backgroundColorByHexString("#1A237E");
-      }
+			if (this.platform.is('android')) {
+				StatusBar.backgroundColorByHexString("#1A237E");
+			}
 
-      Splashscreen.hide();
-    });
-  }
+			Splashscreen.hide();
+		});
+	}
 }
 
 ionicBootstrap(MyApp, [ConnectivityService, StorageService, PokemonService, MarkerService]);
